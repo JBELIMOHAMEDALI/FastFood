@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+
+        android:src="@drawable/back" />
+    <TextView
+
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="@string/edit_forgetpass"
+        android:textColor="#FBFBFB"
+        android:fontFamily="@font/gotham"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="136dp"
+        android:layout_height="132dp"
+        android:background="@drawable/ic_baseline_account_circle_24"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.287" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/img_logo">
+    <EditText
+        android:layout_marginTop="50dp"
+        android:id="@+id/edit_adr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_baseline_email_24"
+        android:hint="Entre votre Email"
+        android:textColorHint="#FBFBFB"
+        android:fontFamily="@font/gotham"
+        android:padding="10dp"
+        android:textColor="#FBFBFB"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="381dp" />
+
+    <EditText
+        android:layout_marginTop="30dp"
+        android:id="@+id/edit_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_baseline_lock_24"
+        android:textColorHint="#FBFBFB"
+        android:hint="Entre votre Mot de pass "
+        android:padding="10dp"
+        android:textColor="#FBFBFB"
+        android:fontFamily="@font/gotham"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="462dp" />
+
+        <Button
+            android:id="@+id/btnconnx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_button_white"
+            android:padding="10dp"
+            android:text="Connection"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
