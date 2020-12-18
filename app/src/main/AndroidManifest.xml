@@ -9,22 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Campy">
+        <activity android:name=".controller.RegesterActivity"></activity>
         <activity
             android:name=".controller.DashboardActivte"
             android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.Campy.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.Campy.NoActionBar" />
         <activity android:name=".controller.IntroductoryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".controller.MainActivity" />
-        <activity android:name=".controller.Food_Activity"/>
+        <activity android:name=".controller.Food_Activity" />
     </application>
 
 </manifest>

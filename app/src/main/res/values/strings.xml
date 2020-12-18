@@ -14,4 +14,19 @@
     <string name="menu_gallery">Gallery</string>
     <string name="deconnexion">Déconnexion</string>
     <string name="titrefood">Food Title</string>
+    <string name="prompt_cin">CIN</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_lastname">nom de famille</string>
+    <string name="prompt_firstname">Prénom</string>
+    <string name="prompt_password">Mot de Passe</string>
+    <string name="prompt_phone">Téléphone</string>
+    <string name="prompt_birth_date">Date De Naissance</string>
+    <string name="prompt_confirm_password">Répeter le mot de passe</string>
+    <string name="action_save">Sauvegarder</string>
+    <string name="invalid_input">Veuiller entrer une valeur correcte !</string>
+    <string name="establish">Etablir la connexion...</string>
+    <string name="btnReg">Inscription</string>
+    <string name="btnCon">Connection</string>
+    <string name="hntpass">Entre votre Mot de pass</string>
+    <string name="hintemail">Entre votre Email</string>
 </resources>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.RegesterActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:padding="30dp">
+            <ImageView
+                android:layout_width="218dp"
+                android:layout_height="137dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/accountpic" />
+
+            <TextView
+                android:id="@+id/TextUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Nom d'utilisateur"
+                android:textSize="25dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+
+                android:layout_marginTop="2dp"
+                android:text="Date commune"
+                android:id="@+id/TextJoinDate" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="30dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/cin"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:hint="@string/prompt_cin"
+                    android:nextFocusDown="@id/email"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:hint="@string/prompt_email"
+                    android:nextFocusDown="@id/firstname"
+                    android:inputType="textEmailAddress" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/lastname"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:hint="@string/prompt_lastname"
+                    android:nextFocusDown="@id/firstname"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/firstname"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:hint="@string/prompt_firstname"
+                    android:nextFocusDown="@id/birth_date"
+                    android:inputType="text" />
+            </LinearLayout>
+             <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/birth_date"
+                        android:layout_width="180dp"
+                        android:layout_height="50dp"
+                        android:hint="@string/prompt_birth_date"
+                        android:nextFocusDown="@id/phone"
+                        android:inputType="date" />
+
+                    <EditText
+                        android:id="@+id/phone"
+                        android:layout_width="180dp"
+                        android:layout_height="50dp"
+                        android:hint="@string/prompt_phone"
+                        android:nextFocusDown="@id/password"
+                        android:inputType="phone" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:hint="@string/prompt_password"
+                    android:nextFocusDown="@id/confirmPassword"
+                    android:inputType="textPassword" />
+
+                <EditText
+                    android:id="@+id/confirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:hint="@string/prompt_confirm_password"
+                    android:nextFocusDown="@id/btnSave"
+                    android:inputType="textPassword" />
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="#AC9F5E"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:text="@string/action_save"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:layout_marginTop="15dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

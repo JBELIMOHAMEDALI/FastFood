@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
                     "(?=.*[a-zA-Z])" +      //any letter
                     ".{4,}" +               //at least 4 characters
                     "$");
-    Button btnconnx;
+    Button btnconnx,btnreg;
     EditText editTextEmail;
     EditText editTextPass;
 TextView textView ;
@@ -36,6 +36,7 @@ TextView textView ;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnconnx = (Button) findViewById(R.id.btnconnx);
+        btnreg = (Button) findViewById(R.id.btnReg);
         editTextEmail = (EditText)findViewById(R.id.edit_adr);
         editTextPass =(EditText) findViewById(R.id.edit_pass);
         TextView textView = findViewById(R.id. textView ) ;
@@ -47,25 +48,32 @@ TextView textView ;
             public void onClick(View v) {
 
               if (validateEmail() && validatePassword()) {
-
-
                         loginUser();
-
                    }
                 }
-
-
-
         });
+        btnreg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToRegester();
+            }
+        });
+        //btnReg
+    }
+
+    private void goToRegester() {
+        startActivity(new Intent(MainActivity.this, RegesterActivity.class));
     }
 
     private boolean validateEmail() {
         String emailInput = editTextEmail.getText().toString().trim();
         if (emailInput.isEmpty()) {
             editTextEmail.setError("Le champ ne peut pas être vide");
+            editTextEmail.requestFocus();
             return false;
         } else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
             editTextEmail.setError("S'il vous plaît, mettez une adresse email valide");
+            editTextPass.requestFocus();
             return false;
         } else {
             editTextEmail.setError(null);
@@ -91,18 +99,19 @@ TextView textView ;
         String Adres = editTextEmail.getText().toString();
         String pass = editTextPass.getText().toString();
         boolean ok = false ;
-        if(Adres.equals(Constants.ADRESSE ) && pass.equals(Constants.MOTPASS))
-        {
-            ok = true ;
-        }
-        if(ok)
-        {
-            SharedPreferences sharedPreferences = getSharedPreferences(Constants.MY_PREFS, Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putBoolean(Constants.ISCONNECTED, true);
-            editor.putString(Constants.EMAILCONNECTE,Adres);
-            editor.apply();
-            startActivity(new Intent(MainActivity.this, DashboardActivte.class));
+        String passw="";
+        SharedPreferences preferences = getSharedPreferences(Constants.MY_PREFS, MODE_PRIVATE);
+        if(preferences.contains(Adres))
+        {passw =preferences.getString(Adres, "notfound");
+            if(passw.equals(pass))
+            {
+                SharedPreferences sharedPreferences = getSharedPreferences(Constants.MY_PREFS, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean(Constants.ISCONNECTED, true);
+                editor.putString(Constants.EMAILCONNECTE, Adres);
+                editor.apply();
+                startActivity(new Intent(MainActivity.this, DashboardActivte.class));
+            }
         }else {
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
             alertDialog.setTitle(":/ Erreur !!!!");
