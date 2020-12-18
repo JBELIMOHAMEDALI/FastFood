@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Campy">
-        <activity android:name=".controller.RegesterActivity"></activity>
+        <activity android:name=".controller.ForgetPassworedActivity"></activity>
+        <activity android:name=".controller.RegesterActivity" />
         <activity
             android:name=".controller.DashboardActivte"
             android:label="@string/title_activity_main2"

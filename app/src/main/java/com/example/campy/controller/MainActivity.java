@@ -24,13 +24,14 @@ import java.util.regex.Pattern;
 public class MainActivity extends AppCompatActivity {
     private static final Pattern PASSWORD_PATTERN =
             Pattern.compile("^" +
-                    "(?=.*[a-zA-Z])" +      //any letter
+
                     ".{4,}" +               //at least 4 characters
                     "$");
     Button btnconnx,btnreg;
     EditText editTextEmail;
     EditText editTextPass;
-TextView textView ;
+
+    TextView textVforget ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,10 +40,10 @@ TextView textView ;
         btnreg = (Button) findViewById(R.id.btnReg);
         editTextEmail = (EditText)findViewById(R.id.edit_adr);
         editTextPass =(EditText) findViewById(R.id.edit_pass);
-        TextView textView = findViewById(R.id. textView ) ;
+         textVforget = findViewById(R.id. textView ) ;
         SpannableString content = new SpannableString( "Mot de Passe Oublié" ) ;
         content.setSpan( new UnderlineSpan() , 0 , content.length() , 0 ) ;
-        textView.setText("Mot de Passe Oublié") ;
+        textVforget.setText("Mot de Passe Oublié") ;
         btnconnx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,14 +52,24 @@ TextView textView ;
                         loginUser();
                    }
                 }
-        });
+        });//end btn save
         btnreg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToRegester();
             }
         });
-        //btnReg
+        //end btnReg
+        textVforget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToForgetPassword();
+
+            }
+        });//end forget passwored
+    }
+    private void goToForgetPassword() {
+        startActivity(new Intent(MainActivity.this, ForgetPassworedActivity.class));
     }
 
     private void goToRegester() {
@@ -124,9 +135,6 @@ TextView textView ;
                     });
             alertDialog.show();
         }
-             /*   */
-
-
         }
 
     }

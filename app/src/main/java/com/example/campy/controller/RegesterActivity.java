@@ -3,6 +3,7 @@ package com.example.campy.controller;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +21,7 @@ Button btnEnrg;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        btnEnrg=(Button) findViewById(R.id.btnSave);
+        btnEnrg=(Button) findViewById(R.id.btnsend);
         cin = findViewById(R.id.cin);
         email = findViewById(R.id.email);
         username = findViewById(R.id.firstname);
@@ -51,11 +52,15 @@ Button btnEnrg;
     }
 
     private void register(String email, String passwored) {
-       // displayLoader();
+        displayLoader();
         SharedPreferences preferences = getSharedPreferences(Constants.MY_PREFS,MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(email,passwored);
-        editor.commit();
+       if( editor.commit())
+       {
+           startActivity(new Intent(RegesterActivity.this, MainActivity.class));
+           finish();
+       }
     }
 
     private boolean validateInputs() {

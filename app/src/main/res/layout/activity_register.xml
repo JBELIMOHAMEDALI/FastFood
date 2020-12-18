@@ -129,11 +129,11 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:hint="@string/prompt_confirm_password"
-                    android:nextFocusDown="@id/btnSave"
+                    android:nextFocusDown="@id/btnsend"
                     android:inputType="textPassword" />
 
                 <Button
-                    android:id="@+id/btnSave"
+                    android:id="@+id/btnsend"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:background="#AC9F5E"

@@ -29,4 +29,5 @@
     <string name="btnCon">Connection</string>
     <string name="hntpass">Entre votre Mot de pass</string>
     <string name="hintemail">Entre votre Email</string>
+    <string name="btnsend">Send</string>
 </resources>
